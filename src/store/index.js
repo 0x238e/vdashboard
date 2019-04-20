@@ -33,7 +33,7 @@ export default new Vuex.Store({
     async fetchEventList({ state, commit }) {
       if (!state.isLoggedIn) return;
       if (!eventSocket) {
-        eventSocket = new WebSocket('ws://localhost:8000/ws/event');
+        eventSocket = new WebSocket('ws://api.v.noinfinity/ws/event');
         eventSocket.onopen = () => {
           eventSocket.send(JSON.stringify({
             public: state.currentAccount.publicKey,
