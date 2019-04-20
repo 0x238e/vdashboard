@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <router-view></router-view>
-    <nav-tab :activeTab="1"></nav-tab>
+    <nav-tab :activeTab="1" v-if="this.$store.state.isLoggedIn"></nav-tab>
   </div>
 </template>
 

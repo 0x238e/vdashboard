@@ -2,7 +2,7 @@
   <div>
     <Header title="事件列表"></Header>
     <section class="section">
-      <event-card :event="event1"></event-card>
+      <event-card v-for="event in eventList" :key="event.id" :event="event"></event-card>
     </section>
   </div>
 </template>
@@ -26,12 +26,19 @@ export default {
         },
         id: 'asdasdasd',
         status: undefined,
-        
       }
     };
   },
   props: {
     //
-  }
+  },
+  created() {
+    this.$store.dispatch('fetchEventList');
+  },
+  computed: {
+    eventList() {
+      return this.$store.state.eventList;
+    },
+  },
 }
 </script>

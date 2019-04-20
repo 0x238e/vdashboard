@@ -7,6 +7,7 @@ import EventListView from '../views/EventListView.vue';
 import EventDetailView from '../views/EventDetailView.vue';
 import RecordView from '../views/RecordView.vue';
 import MeView from '../views/MeView.vue';
+import LoginView from '../views/LoginView.vue';
 
 Vue.use(Router);
 
@@ -47,8 +48,23 @@ const routes = [
       next();
     },
   },
+  {
+    path: '/login',
+    name: 'login',
+    component: LoginView,
+  }
 ];
 
-export default new Router({
+const router = new Router({
   routes,
 });
+
+router.beforeEach((to, from, next) => {
+  if (to.name === 'login' || store.state.isLoggedIn) {
+    next();
+  } else {
+    next({ name: 'login' });
+  }
+});
+
+export default router;

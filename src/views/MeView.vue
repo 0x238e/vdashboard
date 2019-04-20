@@ -1,5 +1,9 @@
 <template>
-  <section class="section"></section>
+  <section class="section">
+    <div class="card">
+      asd
+    </div>
+  </section>
 </template>
 
 <script>
@@ -10,3 +14,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.section {
+  height: 100%;
+}
+</style>
+
