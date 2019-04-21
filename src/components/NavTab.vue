@@ -31,5 +31,6 @@ export default {
   bottom: 0px;
   width: 100%;
   padding: 0 0 0.5rem 0;
+  background-color: white;
 }
 </style>

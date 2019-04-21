@@ -41,7 +41,7 @@ export default {
         privateKey: this.privateKey,
       });
       if (this.$store.state.isLoggedIn) {
-        this.$router.push({ name: 'me' });
+        this.$router.push({ name: 'eventList' });
       }
     },
   },

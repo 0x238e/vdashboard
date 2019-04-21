@@ -1,5 +1,5 @@
 <template>
-  <b-collapse class="card" :open="!event.status">
+  <b-collapse class="card" :open="forceOpen || !event.status">
     <div
       slot="trigger" 
       slot-scope="props"
@@ -34,7 +34,31 @@
           </div>
           <div class="level-right">
             <div class="level-item">
-              <p>{{ event.from }}</p>
+              <a>{{ event.from }}</a>
+            </div>
+          </div>
+        </div>
+        <div class="level">
+          <div class="level-left">
+            <div class="level-item">
+              <p>发起人偏好程度：</p>
+            </div>
+          </div>
+          <div class="level-right">
+            <div class="level-item">
+              <p>{{ event.userlevel }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="level">
+          <div class="level-left">
+            <div class="level-item">
+              <p>报价：</p>
+            </div>
+          </div>
+          <div class="level-right">
+            <div class="level-item">
+              <p>{{ event.price }} CPC</p>
             </div>
           </div>
         </div>
@@ -52,7 +76,7 @@
         </div>
       </div>
     </div>
-    <footer class="card-footer">
+    <footer class="card-footer" v-if="!hideFooter">
       <a class="card-footer-item" style="color: red;" v-if="!expired">拒绝</a>
       <a class="card-footer-item" style="color: green;" v-if="!expired">同意</a>
       <div class="card-footer-item" v-if="expired && !event.status">
@@ -71,6 +95,14 @@ export default {
   name: 'EventCard',
   props: {
     event: Object,
+    forceOpen: {
+      type: Boolean,
+      default: false,
+    },
+    hideFooter: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
