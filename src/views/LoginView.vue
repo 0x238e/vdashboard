@@ -14,7 +14,7 @@
             <b-input v-model="publicKey" expanded></b-input>
           </b-field>
           <br>
-          <b-field label="私钥">
+          <b-field label="私钥 / 密码">
             <b-input v-model="privateKey" expanded></b-input>
           </b-field>
           <br>

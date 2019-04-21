@@ -96,7 +96,7 @@
           <div class="media-content">
             <p class="title is-4">Yiwei Yang</p>
             <p class="subtitle is-6">
-              <a href="#">#0x02275aEdd72D6406D20A21De9837737dc8501dC2</a>
+              <a href="#">#{{ this.$store.state.currentAccount.publicKey }}</a>
             </p>
           </div>
         </div>
@@ -110,20 +110,20 @@
             </div>
             <div class="level-right">
               <div class="level-item">
-                <a href="#">0x02275aEdd72D6406D20A21De9837737dc8501dC2</a>
+                <a href="#">{{ this.$store.state.currentAccount.publicKey }}</a>
               </div>
             </div>
           </div>
           <div class="level">
             <div class="level-left">
               <div class="level-item">
-                私钥
+                私钥 / 密码
               </div>
             </div>
             <div class="level-right">
               <div class="level-item">
                 <span v-if="!privateKeyRevealed">*************</span>
-                <span v-else>AD877C4BE2A3A966CCD88C79B2EB0B2AEE6BE490FCCEC2121FC3B528D3044124</span>
+                <span v-else>{{ this.$store.state.currentAccount.privateKey }}</span>
                 &nbsp;&nbsp;
                 <a @click="togglePrivateKey"><b-icon :icon="privateKeyRevealed ? 'eye-off' : 'eye'"></b-icon></a>
               </div>
