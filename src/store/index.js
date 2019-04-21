@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import { getEventList } from '../api/event';
+//import { getEventList } from '../api/event';
 
 let eventSocket;
 
@@ -55,8 +55,8 @@ export default new Vuex.Store({
           commit('updateEventList', evl);
         }
       }
-      const data = await getEventList();
-      commit('updateEventList', data);
+      //const data = await getEventList();
+      //commit('updateEventList', data);
     },
   }
 });

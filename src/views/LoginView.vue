@@ -2,6 +2,7 @@
   <div class="hero is-bold is-primary is-fullheight">
     <div class="hero-body">
       <div class="container">
+        <img src="/logo2.png" alt="" id="logo2">
         <h1 class="title">
           VChain - Dashboard
         </h1>
@@ -54,6 +55,9 @@ export default {
   padding: 100px;
   margin-top: 50px;
   border-radius: 30px;
+}
+#logo2 {
+  width: 100px;
 }
 </style>
 

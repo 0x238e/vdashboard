@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header title="事件列表"></Header>
+    <Header title="实时事件推送"></Header>
     <section class="section">
       <event-card v-for="event in eventList" :key="event.id" :event="event"></event-card>
     </section>
