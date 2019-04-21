@@ -123,7 +123,7 @@
             <div class="level-right">
               <div class="level-item">
                 <span v-if="!privateKeyRevealed">*************</span>
-                <span v-else>0xeB16a89386832C869bDad06BCF790aaAD3551380</span>
+                <span v-else>AD877C4BE2A3A966CCD88C79B2EB0B2AEE6BE490FCCEC2121FC3B528D3044124</span>
                 &nbsp;&nbsp;
                 <a @click="togglePrivateKey"><b-icon :icon="privateKeyRevealed ? 'eye-off' : 'eye'"></b-icon></a>
               </div>

@@ -33,7 +33,8 @@ export default {
     //
   },
   created() {
-    this.$store.dispatch('fetchEventList');
+    if (this.$store.state.eventList.length === 0)
+      this.$store.dispatch('fetchEventList');
   },
   computed: {
     eventList() {
